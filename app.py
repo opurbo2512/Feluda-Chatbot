@@ -15,19 +15,16 @@ st.markdown("""
 <style>
 
 .main {
-    background-color: #111111;
     color: white;
 }
 
 .stChatMessage {
-    background-color: #1e1e1e;
     border-radius: 15px;
     padding: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #f4c542;
 }
 
 </style>
