@@ -77,27 +77,27 @@ def get_response(user_input):
 
     return answer
     
+#importing pics for avatar
+feluda_pic = Image.open("feluda.jpg")
+user_pic = Image.open("user.webp")
+
 #session state for remembering chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 #showing message from session state
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"], avatar = message["pic"):
         st.write(message["content"])
-
-#importing pics for avatar
-feluda_pic = Image.open("feluda.jpg")
-user_pic = Image.open("user.webp")
 
 #taking prompt
 prompt = st.chat_input("এখানে লিখুন...")
 if prompt:
     with st.chat_message("user",avatar = user_pic):
         st.write(prompt)
-    st.session_state.messages.append({"role":"user","content" : prompt})
+    st.session_state.messages.append({"role":"user","content" : prompt,"pic" : user_pic})
 
     response = get_response(prompt)
     with st.chat_message("assistant",avatar=feluda_pic):
         st.write(response)
-    st.session_state.messages.append({"role":"assistant","content" : response})
+    st.session_state.messages.append({"role":"assistant","content" : response,"pic" : feluda_pic})
