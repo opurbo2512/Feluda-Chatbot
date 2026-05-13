@@ -87,7 +87,7 @@ if "messages" not in st.session_state:
 
 #showing message from session state
 for message in st.session_state.messages:
-    with st.chat_message(message["role"], avatar = message["pic"):
+    with st.chat_message(message["role"], avatar = message["pic"]):
         st.write(message["content"])
 
 #taking prompt
