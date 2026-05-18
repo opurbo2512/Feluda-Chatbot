@@ -48,7 +48,7 @@ with st.expander("📜 অ্যাপ সম্পর্কে"):
     
 #API key for chatbot
 client = Groq(
-    api_key = "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"
+    api_key = st.secrets["GROQ_API_KEY]
 )
 
 #reading prompt from file
